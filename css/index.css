@@ -1,0 +1,332 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/background.jpg');
+}
+
+.all {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1340px;
+    height: 600px;
+
+}
+
+h1 {
+    font-size: xx-large;
+    color: white;
+    text-align: center;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1340px;
+    height: 100px;
+}
+
+.img {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    width: 400px;
+    height: 50px;
+}
+
+.barColor {
+    text-align: center;
+    border-radius: 4px;
+    background-color: rgb(238, 238, 238);
+    border: solid 1px #149bdf;
+}
+
+.welcome {
+    width: 1100px;
+    height: 450px;
+}
+
+.navBar {
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 1340px;
+    height: 50px;
+
+}
+
+.left {
+    width: 200px;
+    height: 100%;
+    float: left;
+    font-size: x-large;
+    color: white;
+    text-align: center;
+}
+
+.right {
+    width: 700px;
+    height: 100%;
+    float: left;
+    font-size: x-large;
+    color: white;
+    text-align: center;
+}
+
+.personalInfo {
+    width: 350px;
+    height: 100%;
+    float: left;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+}
+
+.exit {
+    width: 50px;
+    height: 100%;
+    float: left;
+    font-size: large;
+    color: black;
+    text-align: center;
+}
+
+.menuBar {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 200px;
+    height: 450px;
+    box-shadow: 3px 3px 10px #000;
+}
+
+.menu {
+    width: 200px;
+    height: 50px;
+    font-size: larger;
+    color: black;
+    text-align: center;
+}
+
+.content {
+    width: 1100px;
+    height: 450px;
+    position: absolute;
+    top: 150px;
+    left: 210px;
+    box-shadow: 3px 3px 10px #000;
+    background-color: white;
+}
+
+.otherContent {
+    width: 1100px;
+    height: 450px;
+    display: none;
+    overflow: auto;
+}
+.welcomeContent{
+    width: 1100px;
+    height: 450px;
+    display: block;
+    color:black;
+    background-color: aquamarine;
+}
+.welcomeImg{
+    width: 1100px;
+    height: 450px;
+    display: block;
+    overflow: auto;
+    color:black;
+}
+
+.informationBar {
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    left: 200px;
+    top: 150px;
+    display: none;
+}
+
+.informationMenu {
+    width: 200px;
+    height: 50px;
+    font-size: larger;
+    color: black;
+    text-align: center;
+}
+
+.attendanceBar {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    left: 200px;
+    top: 200px;
+    display: none;
+}
+
+.attendanceMenu {
+    width: 200px;
+    height: 50px;
+    font-size: larger;
+    color: black;
+    text-align: center;
+}
+
+.employeeBar {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 200px;
+    top: 200px;
+    display: none;
+}
+
+.employeeMenu {
+    width: 200px;
+    height: 50px;
+    font-size: larger;
+    color: black;
+    text-align: center;
+}
+
+.trainBar {
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    left: 200px;
+    top: 300px;
+    display: none;
+}
+
+.trainMenu {
+    width: 200px;
+    height: 50px;
+    font-size: larger;
+    color: black;
+    text-align: center;
+}
+
+.evaluationBar {
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    left: 200px;
+    top: 350px;
+    display: none;
+}
+
+.rewardMenu {
+    width: 200px;
+    height: 50px;
+    font-size: larger;
+    color: black;
+    text-align: center;
+}
+
+.rewardBar {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    left: 200px;
+    top: 350px;
+    display: none;
+}
+
+.evaluationMenu {
+    width: 200px;
+    height: 50px;
+    font-size: larger;
+    color: black;
+    text-align: center;
+}
+
+.authorityBar {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    left: 200px;
+    top: 400px;
+    display: none;
+}
+
+.authorityMenu {
+    width: 200px;
+    height: 50px;
+    font-size: larger;
+    color: black;
+    text-align: center;
+}
+
+.editAuthorityItem {
+    float: left;
+    border: 1px solid cadetblue;
+    font-size: larger;
+    text-align: center;
+}
+
+.editAuthorityContainer1 {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+.editAuthorityContainer2 {
+    position: absolute;
+    left: 90px;
+    top: 200px;
+}
+
+.roleBar {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 200px;
+    top: 350px;
+    display: none;
+}
+
+.roleMenu {
+    width: 200px;
+    height: 50px;
+    font-size: larger;
+    color: black;
+    text-align: center;
+}
+
+.accountBar {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    left: 200px;
+    top: 550px;
+    display: none;
+}
+
+.accountMenu {
+    width: 200px;
+    height: 50px;
+    font-size: larger;
+    color: black;
+    text-align: center;
+}
+
+.selectRoleContainer1 {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+.selectRoleContainer2 {
+    position: absolute;
+    left: 90px;
+    top: 200px;
+}
+
+#addRoleForm {
+    position: absolute;
+    left: 100px;
+    top: 80px;
+
+}

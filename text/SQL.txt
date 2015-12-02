@@ -1,0 +1,124 @@
+CREATE TABLE Employees(
+  EmployeeID INT NOT NULL PRIMARY KEY,
+  EmployeeName VARCHAR(20) NOT NULL,
+  Sex CHAR(1) NOT NULL,
+  BirthDay DATETIME NOT NULL,
+  Phone VARCHAR(20) NOT NULL,
+  DegreeID INT NOT NULL ,
+  HireDate DATETIME NOT NULL,
+  EmployeeTypeID INT  NOT NULL ,
+  DepartmentID INT NOT NULL,
+  Title VARCHAR(50) NOT NULL,
+  Salary INT NOT NULL,
+  ManagerID INT,
+  FOREIGN KEY(DegreeID) REFERENCES Degrees(DegreeID),
+  FOREIGN KEY(ManagerID) REFERENCES Employees(EmployeeID),
+  FOREIGN KEY(EmployeeTypeID) REFERENCES EmployeeType(EmployeeTypeID),
+  FOREIGN KEY(DepartmentID) REFERENCES Departments(DepartmentID)
+  );
+
+
+CREATE TABLE EmployeeType(
+EmployeeTypeID INT NOT NULL PRIMARY KEY,
+EmployeeTypeName VARCHAR(50) NOT NULL UNIQUE
+);
+
+
+CREATE TABLE Degrees(
+	DegreeID INT NOT NULL PRIMARY KEY,
+	DegreeName VARCHAR(20) NOT NULL UNIQUE
+);
+
+
+CREATE TABLE Departments(
+	DepartmentID INT NOT NULL PRIMARY KEY,
+	DepartmentName VARCHAR(50) NOT NULL UNIQUE,
+	ManagerID INT,
+	FOREIGN KEY(ManagerID) REFERENCES Employees(EmployeeID)
+);
+
+CREATE TABLE Attendances(
+	EmployeeID INT NOT NULL,
+	StatusID INT NOT NULL,
+	Date DATETIME NOT NULL,
+	FOREIGN KEY(StatusID) REFERENCES AttendanceStatus(StatusID),
+	PRIMARY KEY(EmployeeID,Date)
+);
+
+CREATE TABLE Evaluations(
+	EvaluationID INT NOT NULL PRIMARY KEY,
+	EmployeeID INT NOT NULL,
+	EvaluationProjectID INT NOT NULL ,
+	Date DATETIME NOT NULL,
+	Result VARCHAR(2) NOT NULL,
+	FOREIGN KEY(EmployeeID) REFERENCES Employees(EmployeeID),
+	FOREIGN KEY(EvaluationProjectID) REFERENCES EvaluationProjects(EP_ID)
+);
+
+CREATE TABLE  EvaluationProjects(
+	EP_ID INT NOT NULL PRIMARY KEY,
+	ProjectName VARCHAR(20) NOT NULL UNIQUE
+);
+
+CREATE TABLE Training(
+	TrainingID INT NOT NULL PRIMARY KEY,
+	BeginDate DATETIME NOT NULL,
+	EndDate DATETIME NOT NULL,
+	TrainingType VARCHAR(20) NOT NULL,
+	Description VARCHAR(255)
+);
+
+CREATE TABLE EmployeeTraining(
+	TrainingID INT NOT NULL ,
+	EmployeeID INT NOT NULL ,
+	FOREIGN KEY(TrainingID) REFERENCES
+	Training(TrainingID),
+	FOREIGN KEY(EmployeeID) REFERENCES
+	Employees(EmployeeID),
+	PRIMARY KEY(TrainingID,EmployeeID)
+);
+
+CREATE TABLE RewardsAndPunishments(
+	RP_ID INT NOT NULL PRIMARY KEY,
+	EmployeeID INT NOT NULL,
+	Type CHAR(2) NOT NULL ,
+	Date DATETIME NOT NULL,
+	FOREIGN KEY(EmployeeID) REFERENCES
+	Employees(EmployeeID)
+);
+
+CREATE TABLE Users(
+	EmployeeID INT NOT NULL PRIMARY KEY,
+	Password VARCHAR(50) NOT NULL,
+	FOREIGN KEY(EmployeeID) REFERENCES
+	Employees(EmployeeID)
+);
+
+CREATE TABLE UserRole(
+	EmployeeID INT NOT NULL ,
+	RoleID INT NOT NULL ,
+	FOREIGN KEY(EmployeeID) REFERENCES
+	Employees(EmployeeID),
+	FOREIGN KEY(RoleID) REFERENCES
+	Roles(RoleID),
+	PRIMARY KEY(EmployeeID,RoleID)
+);
+
+CREATE TABLE Roles(
+	RoleID INT NOT NULL PRIMARY KEY,
+	RoleName VARCHAR(50) NOT NULL UNIQUE,
+	Auth_Authority INT NOT NULL DEFAULT 0,
+	Auth_Info INT NOT NULL DEFAULT 0,
+	Auth_Job INT NOT NULL DEFAULT 0,
+	Auth_Attendance INT NOT NULL DEFAULT 0,
+	Auth_Training INT NOT NULL DEFAULT 0,
+	Auth_Evaluation INT NOT NULL DEFAULT 0,
+	Auth_RP INT NOT NULL DEFAULT 0,
+	Auth_Role INT NOT NULL DEFAULT 0,
+	Auth_Encrypt INT NOT NULL DEFAULT 0
+);
+CREATE TABLE YEAR(
+	EmployeeID INT NOT NULL PRIMARY KEY,
+	oldYear INT NOT NULL,
+	FOREIGN KEY(EmployeeID) REFERENCES Employees(EmployeeID)
+);

@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/tools.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/getEmployeeInformation.js"></script>
+    <script src="../js/setEmployeeInformation.js"></script>
+    <script src="../js/getTrainInformation.js"></script>
+    <script src="../js/getRewardInformation.js"></script>
+    <script src="../js/getCheckInformation.js"></script>
+    <script src="../js/getAttendanceInformation.js"></script>
+    <script src="../js/addEmployee.js"></script>
+    <script src="../js/selectEmployee.js"></script>
+    <script src="../js/getModifyEmployee.js"></script>
+    <script src="../js/setModifyEmployee.js"></script>
+    <script src="../js/checkModifyEmployee.js"></script>
+    <script src="../js/getDeleteEmployee.js"></script>
+    <script src="../js/setDeleteEmployee.js"></script>
+    <script src="../js/getEditAttendance.js"></script>
+    <script src="../js/checkEditAttendance.js"></script>
+    <script src="../js/setEditAttendance.js"></script>
+    <script src="../js/getAddAttendance.js"></script>
+    <script src="../js/setAddAttendance.js"></script>
+    <script src="../js/getAddTrain.js"></script>
+    <script src="../js/selectTrain.js"></script>
+    <script src="../js/getEditTrain.js"></script>
+    <script src="../js/setEditTrain.js"></script>
+    <script src="../js/getSelectEvaluation.js"></script>
+    <script src="../js/getAddEvaluation.js"></script>
+    <script src="../js/getEditEvaluation.js"></script>
+    <script src="../js/setEditEvaluation.js"></script>
+    <script src="../js/getAddReward.js"></script>
+    <script src="../js/getEditReward.js"></script>
+    <script src="../js/setEditReward.js"></script>
+    <script src="../js/getSelectAuthority.js"></script>
+    <script src="../js/setSelectAuthority.js"></script>
+    <script src="../js/setAddTrain.js"></script>
+    <script src="../js/setAddEvaluation.js"></script>
+    <script src="../js/setAddReward.js"></script>
+    <script src="../js/editAccount.js"></script>
+    <script src="../js/getSelectRole.js"></script>
+    <script src="../js/checkSelectRole.js"></script>
+    <script src="../js/addRole.js"></script>
+    <script src="../js/checkDeleteRole.js"></script>
+    <script src="../js/setDeleteRole.js"></script>
+    <script src="../js/getEditRole.js"></script>
+    <script src="../js/checkEditRole.js"></script>
+    <script src="../js/setEditRole.js"></script>
+    <script src="../js/getEditAuthority.js"></script>
+    <script src="../js/checkEditAuthority.js"></script>
+    <script src="../js/setEditAuthority.js"></script>
+</head>
+<body>
+<div class="all">
+    <div class="header">
+
+        <h1>人事档案管理系统</h1>
+    </div>
+    <div class="navBar">
+        <div class="left">菜单</div>
+        <div class="right">开始页</div>
+        <div class="personalInfo"></div>
+        <div clas="exit"><input type="button" id="exit" class="btn btn-info" value="安全退出"></div>
+    </div>
+    <div class="menuBar">
+        <button class="menu" id="information">个人信息查询</button>
+        <button class="menu" id="employee">员工管理</button>
+        <button class="menu" id="attendance">考勤管理</button>
+        <button class="menu" id="train">培训管理</button>
+        <button class="menu" id="evaluation">考核管理</button>
+        <button class="menu" id="reward">奖惩管理</button>
+        <button class="menu" id="authority">权限管理</button>
+        <button class="menu" id="role">角色管理</button>
+        <button class="menu" id="account">账户设置</button>
+    </div>
+    <div class="content">
+        <div class="welcomeContent otherContent" id="welcomeContent">
+            <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="active item"><img class="welcomeImg" src="../images/img1.jpg"></div>
+                    <div class="item"><img class="welcomeImg" src="../images/img2.jpg"></div>
+                    <div class="item"><img class="welcomeImg" src="../images/img3.jpg"></div>
+                </div>
+            </div>
+        </div>
+        <div class="informationContent otherContent" id="employeeInformationContent">
+            <form id="employeeInformationForm">
+                <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 姓名&nbsp;&nbsp;
+                <input type="text" id="employeeName" readonly>&nbsp;&nbsp; 编号 &nbsp;&nbsp
+                <input type="text" id="employeeID" readonly>&nbsp;&nbsp; 性别 &nbsp;
+                <input type="text" id="sex" readonly>
+                <br>
+                <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 电话 &nbsp;&nbsp;
+                <input type="text" id="phone">&nbsp;&nbsp; 生日 &nbsp;&nbsp;
+                <input type="date" id="birthDay">&nbsp;&nbsp; 年龄
+                <input type="text" id="age" readonly>
+                <br>
+                <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 学历 &nbsp;&nbsp;
+                <input type="text" id="degree" readonly>
+                <br>
+                <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 部门 &nbsp;&nbsp
+                <input type="text" id="department" readonly>&nbsp;&nbsp; 职位 &nbsp;&nbsp
+                <input type="text" id="title" readonly>&nbsp;&nbsp; 薪水 &nbsp;
+                <input type="text" id="salary" readonly>
+                <br>
+                <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 入职时间
+                <input type="date" id="hireDate" readonly>&nbsp;&nbsp; 员工类型
+                <input type="text" id="employeeType" readonly>
+                <br>
+                <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit " class="btn btn-info">保存更改</button>
+            </form>
+        </div>
+        <div class="informationContent otherContent" id="trainInformationContent">
+            <form id="trainInformationForm">
+                <br>
+                <br>
+                <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 年份:
+                <select class="year">
+                    <option value="2007">2007年</option>
+                    <option value="2008">2008年</option>
+                    <option value="2009">2009年</option>
+                    <option value="2010">2010年</option>
+                    <option value="2011">2011年</option>
+                    <option value="2012">2012年</option>
+                    <option value="2013">2013年</option>
+                    <option value="2014">2014年</option>
+                    <option value="2015">2015年</option>
+                </select>
+                &nbsp; &nbsp; &nbsp; &nbsp; 月:
+                <select class="month">
+                    <option value="1">1月</option>
+                    <option value="2">2月</option>
+                    <option value="3">3月</option>
+                    <option value="4">4月</option>
+                    <option value="5">5月</option>
+                    <option value="6">6月</option>
+                    <option value="7">7月</option>
+                    <option value="8">8月</option>
+                    <option value="9">9月</option>
+                    <option value="10">10月</option>
+                    <option value="11">11月</option>
+                    <option value="12">12月</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-info">查询培训信息</button>
+            </form>
+
+            <div class="row-fluid">
+                <div class="span2 barColor">开始时间</div>
+                <div class="span2 barColor">结束时间</div>
+                <div class="span4 barColor">培训内容</div>
+                <div class="span4 barColor">内容描述</div>
+            </div>
+            <div class="subInformationContent row-fluid"></div>
+
+        </div>
+        <div class="informationContent otherContent" id="rewardInformationContent">
+            <form id="rewardInformationForm">
+                <br>
+                <br>
+                <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 年份:
+                <select class="year">
+                    <option value="2007">2007年</option>
+                    <option value="2008">2008年</option>
+                    <option value="2009">2009年</option>
+                    <option value="2010">2010年</option>
+                    <option value="2011">2011年</option>
+                    <option value="2012">2012年</option>
+                    <option value="2013">2013年</option>
+                    <option value="2014">2014年</option>
+                    <option value="2015">2015年</option>
+                </select>
+                &nbsp; &nbsp; &nbsp; &nbsp; 月:
+                <select class="month">
+                    <option value="1">1月</option>
+                    <option value="2">2月</option>
+                    <option value="3">3月</option>
+                    <option value="4">4月</option>
+                    <option value="5">5月</option>
+                    <option value="6">6月</option>
+                    <option value="7">7月</option>
+                    <option value="8">8月</option>
+                    <option value="9">9月</option>
+                    <option value="10">10月</option>
+                    <option value="11">11月</option>
+                    <option value="12">12月</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-info">查询奖惩信息</button>
+            </form>
+            <div class="row-fluid">
+                <div class="span4 barColor">日期</div>
+                <div class="span8 barColor">内容描述</div>
+            </div>
+            <div class="subInformationContent row-fluid"></div>
+
+        </div>
+        <div class="informationContent otherContent" id="checkInformationContent">
+            <form id="checkInformationForm">
+                <br>
+                <br>
+                <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 年份:
+                <select class="year">
+                    <option value="2007">2007年</option>
+                    <option value="2008">2008年</option>
+                    <option value="2009">2009年</option>
+                    <option value="2010">2010年</option>
+                    <option value="2011">2011年</option>
+                    <option value="2012">2012年</option>
+                    <option value="2013">2013年</option>
+                    <option value="2014">2014年</option>
+                    <option value="2015">2015年</option>
+                </select>
+                &nbsp; &nbsp; &nbsp; &nbsp; 月:
+                <select class="month">
+                    <option value="1">1月</option>
+                    <option value="2">2月</option>
+                    <option value="3">3月</option>
+                    <option value="4">4月</option>
+                    <option value="5">5月</option>
+                    <option value="6">6月</option>
+                    <option value="7">7月</option>
+                    <option value="8">8月</option>
+                    <option value="9">9月</option>
+                    <option value="10">10月</option>
+                    <option value="11">11月</option>
+                    <option value="12">12月</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-info">查询考核信息</button>
+            </form>
+            <div class="row-fluid">
+                <div class="span4 barColor">日期</div>
+                <div class="span4 barColor">类型</div>
+                <div class="span4 barColor">结果</div>
+            </div>
+            <div class="subInformationContent row-fluid"></div>
+        </div>
+        <div class="informationContent otherContent" id="attendanceInformationContent">
+            <form id="attendanceInformationForm">
+                <br>
+                <br>
+                <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 年份:
+                <select class="year">
+                    <option value="2007">2007年</option>
+                    <option value="2008">2008年</option>
+                    <option value="2009">2009年</option>
+                    <option value="2010">2010年</option>
+                    <option value="2011">2011年</option>
+                    <option value="2012">2012年</option>
+                    <option value="2013">2013年</option>
+                    <option value="2014">2014年</option>
+                    <option value="2015">2015年</option>
+                </select>
+                &nbsp; &nbsp; &nbsp; &nbsp; 月:
+                <select class="month">
+                    <option value="1">1月</option>
+                    <option value="2">2月</option>
+                    <option value="3">3月</option>
+                    <option value="4">4月</option>
+                    <option value="5">5月</option>
+                    <option value="6">6月</option>
+                    <option value="7">7月</option>
+                    <option value="8">8月</option>
+                    <option value="9">9月</option>
+                    <option value="10">10月</option>
+                    <option value="11">11月</option>
+                    <option value="12">12月</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-info">查询考勤信息</button>
+            </form>
+            <div class="row-fluid">
+                <div class="span6 barColor">日期</div>
+                <div class="span6 barColor">出勤状态</div>
+            </div>
+            <div class="subInformationContent row-fluid"></div>
+        </div>
+
+        <div class="otherContent employeeContent" id="addEmployeeContent">
+            <form id="addEmployeeForm">
+                <br>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 姓名
+                <input type="text" class="employeeName">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别
+                <select class="sex">
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 电话
+                <input type="text" class="phone">&nbsp;&nbsp;&nbsp;
+                <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生日
+                <input type="date" class="birthDay">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                学位<select class="degree">
+                <option value="博士">博士</option>
+                <option value="硕士">硕士</option>
+                <option value="学士">学士</option>
+            </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;职位
+                <select class="department">
+                    <option value="人事部门">人事部门</option>
+                    <option value="销售部门">销售部门</option>
+                    <option value="技术部门">技术部门</option>
+                    <option value="后勤部门">后勤部门</option>
+                    <option value="总经理部门">总经理部门</option>
+                </select>
+                <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp 职位
+                <input type="text" class="title">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 薪水
+                <input type="text" class="salary">&nbsp;&nbsp;&nbsp; 员工类型
+                <select class="employeeType">
+                    <option value="正式员工">正式员工</option>
+                    <option value="实习员工">实习员工</option>
+                </select>
+                <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 入职日期
+                <input type="date" class="hireDate">
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-info">提交</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="reset" class="btn btn-warning">重置</button>
+            </form>
+        </div>
+
+        <div class="otherContent employeeContent" id="selectEmployeeContent">
+            <form id="selectEmployeeForm">
+                <br>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 姓名
+                <input type="text" class="employeeName">&nbsp;&nbsp;&nbsp;&nbsp; 性别
+                <select class="sex">
+                    <option value="不限">不限</option>
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                </select>
+                <br>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 部门
+                <select class="department">
+                    <option value="不限">不限</option>
+                    <option value="人事部门">人事部门</option>
+                    <option value="销售部门">销售部门</option>
+                    <option value="技术部门">技术部门</option>
+                    <option value="后勤部门">后勤部门</option>
+                    <option value="总经理部门">总经理部门</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp; 职位
+                <input type="text" class="title"> &nbsp;&nbsp;&nbsp;&nbsp; 员工类型
+                <select class="employeeType">
+                    <option value="不限">不限</option>
+                    <option value="正式员工">正式员工</option>
+                    <option value="实习员工">实习员工</option>
+                </select>
+                <br>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-info">查询</button>
+                &nbsp;&nbsp;
+                <button type="reset" class="btn btn-warning">重置</button>
+            </form>
+
+            <div class="row-fluid">
+                <div name="employeeName" class="span1   barColor">姓名</div>
+                <div name="sex" class="span1    barColor">性别</div>
+                <div name="birthDay" class="span1   barColor">生日</div>
+                <div name="age" class="span1    barColor">年龄</div>
+                <div name="phone" class="span1  barColor">手机</div>
+                <div name="degree" class="span1 barColor">学历</div>
+                <div name="hireDate" class="span1   barColor">雇佣日期</div>
+                <div name="type" class="span1   barColor">员工类型</div>
+                <div name="department" class="span1 barColor">部门</div>
+                <div name="employeeType" class="span1   barColor">职位</div>
+                <div name="salary" class="span1 barColor">薪水</div>
+                <div name="handle" class="span1 barColor">操作</div>
+            </div>
+            <div class="row-fluid subInformationContent"></div>
+
+        </div>
+
+        <div class="otherContent employeeContent" id="modifyEmployeeContent">
+            <form id="getModifyEmployeeForm">
+                <br>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                员工
+                <select id="checkModify">
+                </select>
+                <button type="submit" class="btn btn-info">显示信息</button>
+            </form>
+            <br>
+            <br>
+
+            <form id="setModifyEmployeeForm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 姓名
+                <input type="text" class="employeeName">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 性别
+                <select class="sex">
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                电话
+                <input type="text" class="phone">
+                <br>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                生日<input type="date" class="birthDay">
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 学历
+                <select class="degree">
+                    <option value="学士">学士</option>
+                    <option value="硕士">硕士</option>
+                    <option value="博士">博士</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 部门
+                <select class="department">
+                    <option value="人事部门">人事部门</option>
+                    <option value="销售部门">销售部门</option>
+                    <option value="技术部门">技术部门</option>
+                    <option value="后勤部门">后勤部门</option>
+                    <option value="总经理部门">总经理部门</option>
+                </select>
+                <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                职位
+                <input type="text" class="title">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 薪水
+                <input type="text" class="salary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 类型
+                <select class="employeeType">
+                    <option value="实习员工">实习员工</option>
+                    <option value="正式员工">正式员工</option>
+                </select>
+                <br>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 入职日期
+                <input type="date" class="hireDate">
+                <br>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-success">确认修改</button>
+            </form>
+        </div>
+        <div class="otherContent employeeContent" id="deleteEmployeeContent">
+            <form id="deleteEmployeeForm">
+                <br>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                员工
+                <select class="employeeName">
+                </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-danger">删除</button>
+            </form>
+        </div>
+        <div class="attendanceContent otherContent" id="editAttendanceContent">
+            <form id="editAttendanceForm">
+                <br>
+                <br>
+                <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 年份:
+                <select class="year">
+                    <option value="2007">2007年</option>
+                    <option value="2008">2008年</option>
+                    <option value="2009">2009年</option>
+                    <option value="2010">2010年</option>
+                    <option value="2011">2011年</option>
+                    <option value="2012">2012年</option>
+                    <option value="2013">2013年</option>
+                    <option value="2014">2014年</option>
+                    <option value="2015">2015年</option>
+                </select>
+                &nbsp; &nbsp; &nbsp; &nbsp; 月:
+                <select class="month">
+                    <option value="1">1月</option>
+                    <option value="2">2月</option>
+                    <option value="3">3月</option>
+                    <option value="4">4月</option>
+                    <option value="5">5月</option>
+                    <option value="6">6月</option>
+                    <option value="7">7月</option>
+                    <option value="8">8月</option>
+                    <option value="9">9月</option>
+                    <option value="10">10月</option>
+                    <option value="11">11月</option>
+                    <option value="12">12月</option>
+                </select>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <select class="employeeName">
+
+                </select>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <button type="submit" class="btn btn-info">查询</button>
+            </form>
+            <div class="row-fluid">
+                <div class="span6 barColor">日期</div>
+                <div class="span6 barColor">出勤状态</div>
+            </div>
+            <form id="changeAttendance">
+                <button type="submit" class="btn btn-info">确认修改</button>
+            </form>
+        </div>
+
+        <div class="attendanceContent otherContent" id="addAttendanceContent">
+            <br><br><br>
+
+            <form id="addAttendanceForm">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                姓名<select class="employeeName"></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                日期<input type="date" class="date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                出勤状态 <select class="status">
+                <option value="1">出勤</option>
+                <option value="2">未出勤</option>
+            </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-info">确认添加</button>
+            </form>
+        </div>
+
+        <div class="otherContent trainContent" id="addTrainContent">
+            <form id="addTrainForm">
+                <br><br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                培训类型<select class="type"></select>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                员工<select class="employee"></select>
+                <button type="submit" class="btn btn-success">确认添加</button>
+            </form>
+        </div>
+        <div class="otherContent trainContent" id="selectTrainContent">
+
+            <div class="row-fluid">
+                <div class="span1 barColor">ID</div>
+                <div class="span2 barColor">开始日期</div>
+                <div class="span2 barColor">结束日期</div>
+                <div class="span2 barColor">培训类型</div>
+                <div class="span4 barColor">描述</div>
+                <div class="span1 barColor">参加人数</div>
+            </div>
+
+            <div class="subInformationContent">
+
+            </div>
+        </div>
+
+
+        <div class="otherContent trainContent" id="editTrainContent">
+            <br>
+            <br>
+
+
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; 选择培训&nbsp; &nbsp; &nbsp;
+            <select class="trainDate">
+
+            </select>&nbsp; &nbsp; &nbsp; &nbsp;
+            <button type="submit" class="btn btn-info getTrain">查询</button>
+
+            <form id="editTrainForm">
+                <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 开始日期
+                <input type="date" class="startDate"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;结束日期
+                <input type="date" class="endDate">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 培训类型
+                <input type="text" class="trainType">
+
+                <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 培训描述
+                <textarea class="trainDescription" cols="30" rows="10"></textarea>
+
+                <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <button type="submit" class="btn btn-info">保存更改</button>
+            </form>
+        </div>
+
+        <div class="otherContent evaluationContent" id="selectEvaluationContent">
+            <form id="selectEvaluationForm">
+                <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+                <select class="year">
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                </select>
+                <select class="month">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="11">12</option>
+                </select>
+                <button type="submit" class="btn btn-success">查询</button>
+            </form>
+            <div class="subInformationContent">
+                <div class="row-fluid">
+                    <div class="span2 barColor">ID</div>
+                    <div class="span3 barColor">姓名</div>
+                    <div class="span3 barColor">日期</div>
+                    <div class="span3 barColor">考核项目</div>
+                    <div class="span1 barColor">成绩</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="otherContent evaluationContent" id="addEvaluationContent">
+            <form id="addEvaluationForm">
+                <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                员工<select class="employee"></select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                考核项目<select class="projectType"></select><br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                日期 <input type="date" class="checkDate">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                结果 <input type="text" class="result">
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-info">添加考核</button>
+            </form>
+        </div>
+
+        <div class="otherContent evaluationContent" id="editEvaluationContent">
+            <br><br>
+
+            <div class="row-fluid">
+                <div class="span3 barColor">项目ID</div>
+                <div class="span3 barColor">项目名称</div>
+            </div>
+            <form class="subInformationContent">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            </form>
+            <button type="button" class="btn btn-success" id="submitEditEvaluation">确认修改</button>
+
+        </div>
+        <div class="otherContent rewardContent" id="addRewardContent">
+            <br><br><br>
+
+            <form id="addRewardForm">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                员工 <select class="employee"></select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                日期<input type="date" class="date"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                奖惩情况 <input type="text" class="result"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-success">确认添加</button>
+            </form>
+        </div>
+
+
+        <div class="otherContent rewardContent" id="editRewardContent">
+            <br><br>
+
+            <div class="row-fluid">
+                <input readonly type="text" value="RP_ID">
+                <input readonly type="text" value="职员ID">
+                <input readonly type="text" value="奖惩情况">
+                <input readonly type="text" value="日期">
+            </div>
+            <form id="editRewardForm">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-success">确认修改</button>
+            </form>
+        </div>
+
+
+        <div class="otherContent authorityContent" id="selectAuthorityContent">
+            <form id="selectAuthorityForm">
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select class="authority">
+                    <option value="Auth_Authority">Auth_Authority</option>
+                    <option value="Auth_Info">Auth_Info</option>
+                    <option value="Auth_Job">Auth_Job</option>
+                    <option value="Auth_Attendance">Auth_Attendance</option>
+                    <option value="Auth_Training">Auth_Training</option>
+                    <option value="Auth_Evaluation">Auth_Evaluation</option>
+                    <option value="Auth_RP">Auth_RP</option>
+                    <option value="Auth_Role">Auth_Role</option>
+                    <option value="Auth_Encrypt">Auth_Encrypt</option>
+                </select>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-info">查询</button>
+            </form>
+            <div class="row-fluid">
+                <div class="span12 barColor"><h4>拥有该权限的员工功能</h4></div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span2 barColor">员工ID</div>
+                <div class="span2 barColor">姓名</div>
+                <div class="span3 barColor">部门</div>
+                <div class="span2 barColor">职位</div>
+                <div class="span3 barColor">操作</div>
+            </div>
+            <div class="employeeAuthority">
+            </div>
+            <br><br><br><br><br><br>
+
+            <div class="row-fluid">
+                <div class="span12 barColor"><h4>拥有该权限的角色</h4></div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span6 barColor">角色名称</div>
+                <div class="span6 barColor">操作</div>
+            </div>
+            <div class="roleAuthority">
+            </div>
+        </div>
+        <div class="otherContent authorityContent" id="editAuthorityContent">
+
+            <form id="editAuthorityForm">
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                员工 <select class="employeeName">
+
+            </select>
+                <button type="submit" class="btn btn-info">查询权限</button>
+            </form>
+            <div id="editAuthorityInfo">
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="row-fluid">
+                    <div class="span12 barColor"><h4>员工权限</h4></div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span2   barColor">Authority</div>
+                    <div class="span1   barColor">Info</div>
+                    <div class="span1   barColor">Job</div>
+                    <div class="span2   barColor">Attendance</div>
+                    <div class="span1   barColor">Train</div>
+                    <div class="span2   barColor">Evaluation</div>
+                    <div class="span1   barColor">RP</div>
+                    <div class="span1   barColor">Role</div>
+                    <div class="span1   barColor">Encrypt</div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span2 barColor editAuthorityItem"></div>
+                    <div class="span1 barColor editAuthorityItem"></div>
+                    <div class="span1 barColor editAuthorityItem"></div>
+                    <div class="span2 barColor editAuthorityItem"></div>
+                    <div class="span1 barColor editAuthorityItem"></div>
+                    <div class="span2 barColor editAuthorityItem"></div>
+                    <div class="span1 barColor editAuthorityItem"></div>
+                    <div class="span1 barColor editAuthorityItem"></div>
+                    <div class="span1 barColor editAuthorityItem"></div>
+                </div>
+                <br><br>
+
+                <div class="row-fluid">
+                    <div class="span12 barColor"><h4> 权限来源</h4></div>
+                </div>
+                <br>
+
+                <div class="editEmployeeAuthority">
+                    <div class="roleName row-fluid">
+
+                    </div>
+                </div>
+
+                &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-success submitEditAuthority">确认修改</button>
+            </div>
+        </div>
+        <div class="otherContent roleContent" id="selectRoleContent">
+            <br>
+
+            <form id="selectRoleName">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                选择要查询的角色 <select class="roleName">
+            </select>
+                <button type="submit" class="btn btn-info">查询角色信息</button>
+            </form>
+            <div id="selectRoleInfo">
+
+                <br>
+
+                <div class="row-fluid">
+                    <div class="span12 barColor">
+                        <h4>角色权限</h4>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row-fluid">
+                    <div class="span2 barColor">Auth_Authority</div>
+                    <div class="span1 barColor">Auth_Info</div>
+                    <div class="span1 barColor">Auth_Job</div>
+                    <div class="span1 barColor">Auth_Atten</div>
+                    <div class="span1 barColor">Auth_Train</div>
+                    <div class="span2 barColor">Auth_Evalua</div>
+                    <div class="span1 barColor">Auth_RP</div>
+                    <div class="span1 barColor">Auth_Role</div>
+                    <div class="span2 barColor">Auth_Encrypt</div>
+
+                </div>
+                <div class="getAuthority row-fluid">
+                    <div class="span2 barColor index1"></div>
+                    <div class="span1 barColor index2"></div>
+                    <div class="span1 barColor index3"></div>
+                    <div class="span1 barColor index4"></div>
+                    <div class="span1 barColor index5"></div>
+                    <div class="span2 barColor index6"></div>
+                    <div class="span1 barColor index7"></div>
+                    <div class="span1 barColor index8"></div>
+                    <div class="span2 barColor index9"></div>
+                </div>
+                <br><br>
+
+                <div class="row-fluid">
+                    <div class="span12 barColor">
+                        <h4>角色成员</h4>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row-fluid">
+                    <div class="span2 barColor employeeID">员工ID</div>
+                    <div class="span2 barColor employeeName">员工姓名</div>
+                    <div class="span3 barColor department">部门</div>
+                    <div class="span2 barColor title">职位</div>
+                    <!-- <div class="span3 barColor handle">操作</div>-->
+                </div>
+                <div class="row-fluid subInformationContent">
+
+                </div>
+            </div>
+        </div>
+        <div class="otherContent roleContent" id="addRoleContent">
+
+            <br><br>
+
+            <div class="row-fluid">
+                <div class="span2 barColor">角色名称</div>
+                <div class="span1 barColor">Authority</div>
+                <div class="span1 barColor">Info</div>
+                <div class="span1 barColor">Job</div>
+                <div class="span1 barColor">Attendance</div>
+                <div class="span1 barColor">Train</div>
+                <div class="span1 barColor">Evaluation</div>
+                <div class="span1 barColor">RP</div>
+                <div class="span1 barColor">Role</div>
+                <div class="span1 barColor">Encrypt</div>
+                <br><br><br><br><br>
+
+            </div>
+            <form id="addRoleForm " class="row-fluid">
+                <input type="text" class="barColor span2 addRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="barColor span1 addRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="barColor span1 addRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="barColor span1 addRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="barColor span1 addRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="barColor span1 addRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="barColor span1 addRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="barColor span1 addRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="barColor span1 addRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="barColor span1 addRoleItem">
+            </form>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-info " id="submitAddRole">确认</button>
+
+        </div>
+        <div class="otherContent roleContent" id="deleteRoleContent">
+
+            <form id="deleteRoleForm">
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                要删除的角色
+                <select class="roleName">
+                </select>
+                <button type="submit" class="btn btn-info">查看角色信息</button>
+                <br><br><br>
+            </form>
+            <div class="row-fluid">
+                <div class="span2 barColor">Authority</div>
+                <div class="span1 barColor">Info</div>
+                <div class="span1 barColor">Job</div>
+                <div class="span2 barColor">Attendance</div>
+                <div class="span1 barColor">Train</div>
+                <div class="span2 barColor">Evaluation</div>
+                <div class="span1 barColor">RP</div>
+                <div class="span1 barColor">Role</div>
+                <div class="span1 barColor">Encrypt</div>
+
+            </div>
+            <div class="getAuthority row-fluid">
+                <div class="span2 barColor index1"></div>
+                <div class="span1 barColor index2"></div>
+                <div class="span1 barColor index3"></div>
+                <div class="span2 barColor index4"></div>
+                <div class="span1 barColor index5"></div>
+                <div class="span2 barColor index6"></div>
+                <div class="span1 barColor index7"></div>
+                <div class="span1 barColor index8"></div>
+                <div class="span1 barColor index9"></div>
+            </div>
+            <div class=""></div>
+            <br><br><br><br><br><br><br>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-danger" id="submitDeleteRole">确认删除</button>
+
+
+        </div>
+        <div class="otherContent roleContent" id="editRoleContent">
+            <br><br>
+
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            要编辑的角色&nbsp;<select class="roleName">
+
+        </select>
+            <button type="button" class="btn btn-info" id="submitEditRole">查询角色信息</button>
+
+            <br><br><br>
+
+            <div class="row-fluid">
+                <div class="span3 barColor">角色名称</div>
+                <div class="span1 barColor">Authority</div>
+                <div class="span1 barColor">Info</div>
+                <div class="span1 barColor">Job</div>
+                <div class="span1 barColor">Attendance</div>
+                <div class="span1 barColor">Train</div>
+                <div class="span1 barColor">Evaluation</div>
+                <div class="span1 barColor">RP</div>
+                <div class="span1 barColor">Role</div>
+                <div class="span1 barColor">Encrypt</div>
+            </div>
+            <form class="row-fluid" id="editRoleForm">
+
+                <input type="text" disabled class="span3 barColor editRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="span1 barColor editRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="span1 barColor editRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="span1 barColor editRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="span1 barColor editRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="span1 barColor editRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="span1 barColor editRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="span1 barColor editRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="span1 barColor editRoleItem">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="span1 barColor editRoleItem">
+
+                <br><br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-info">确认保存</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="reset" class="btn btn-warning">取消更改</button>
+            </form>
+        </div>
+        <div class="otherContent accountContent" id="editAccountContent">
+            <br><br>
+
+            <form id="editAccountForm">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                请输入原密码<input type="password" class="oldPassword">&nbsp;&nbsp;&nbsp;&nbsp;
+                请输入新密码<input type="password" class="newPassword"><br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                请重新输入<input type="password" class="submitPassword">&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-info">确认修改</button>
+            </form>
+
+        </div>
+    </div>
+    <div class="informationBar">
+        <button class="informationMenu" id="employeeInformation">个人信息</button>
+        <button class="informationMenu" id="trainInformation">培训信息</button>
+        <button class="informationMenu" id="rewardInformation">奖惩信息</button>
+        <button class="informationMenu" id="checkInformation">考核信息</button>
+        <button class="informationMenu" id="attendanceInformation">考勤信息</button>
+    </div>
+
+    <div class="employeeBar">
+        <button id="addEmployee" class="employeeMenu">添加员工</button>
+        <button id="selectEmployee" class="employeeMenu">查询员工</button>
+        <button id="modifyEmployee" class="employeeMenu">修改员工</button>
+        <button id="deleteEmployee" class="employeeMenu">删除员工</button>
+    </div>
+    <div class="attendanceBar">
+        <button class="attendanceMenu" id="editAttendance">编辑考勤</button>
+        <button class="attendanceMenu" id="addAttendance">增加考勤</button>
+    </div>
+    <div class="trainBar">
+        <button id="addTrain" class="trainMenu">添加培训</button>
+        <button id="selectTrain" class="trainMenu">查询培训</button>
+        <button id="editTrain" class="trainMenu">编辑培训</button>
+    </div>
+    <div class="evaluationBar">
+        <button class="evaluationMenu" id="selectEvaluation">查询考核</button>
+        <button class="evaluationMenu" id="addEvaluation">添加考核</button>
+        <button class="evaluationMenu" id="editEvaluation">编辑考核</button>
+    </div>
+    <div class="rewardBar">
+        <button class="rewardMenu" id="addReward">添加奖惩</button>
+        <button class="rewardMenu" id="editReward">编辑奖惩</button>
+    </div>
+    <div class="authorityBar">
+        <button id="selectAuthority" class="authorityMenu">查询权限</button>
+        <button id="editAuthority" class="authorityMenu">权限管理</button>
+    </div>
+    <div class="roleBar">
+        <button class="roleMenu" id="selectRole">查询角色</button>
+        <button class="roleMenu" id="addRole">增加角色</button>
+        <button class="roleMenu" id="deleteRole">删除角色</button>
+        <button class="roleMenu" id="editRole">编辑角色</button>
+    </div>
+    <div class="accountBar">
+        <button class="accountMenu" id="editAccount">修改密码</button>
+    </div>
+</div>
+</body>
+
+</html>

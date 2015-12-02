@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/css/bootstrap.min.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/css/index.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/css/login.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/bootstrap.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/getEmployeeInformation.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/jquery-1.11.3.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/setEmployeeInformation.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/php/getEmployeeInformation.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/php/setEmployeeInformation.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/text/SQL.txt" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
